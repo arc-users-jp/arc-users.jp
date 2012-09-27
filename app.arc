@@ -65,7 +65,6 @@
        (notfound)))
 
 (defghhook /wiki/pull
-  (ero payload)
   (git-pull wikidir*))
 
 (git-clone wikirepo* wikidir*)
