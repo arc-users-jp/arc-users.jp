@@ -68,3 +68,4 @@
   (git-pull wikidir*))
 
 (git-clone wikirepo* wikidir*)
+(git-pull wikidir*)
