@@ -11,4 +11,4 @@
     (exec-quiet "git clone" (escshargs repo path))))
 
 (def git-pull (path)
-  (exec-quiet "git --git-dir" (escshargs:+ path "/.git") " pull"))
+  (exec-quiet "cd" (escshargs path) ";git pull"))
