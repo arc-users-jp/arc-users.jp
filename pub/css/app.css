@@ -1,0 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Play:700);
+
+.navbar .brand {
+  padding: 8px 20px;
+  font-family: Play, sans-serif;
+  color: #333;
+}
+
+.navbar .brand:before {
+  display: inline-block;
+  padding-right: 4px;
+  vertical-align: middle;
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAOElEQVR42mNgYGD4TyXM8N/I6D9FmKBB6GAIGoQLjxqEMOgaKytWjG4wAXWjBg0vg4jFBBMkKRgAgf1Xa8+YxHwAAAAASUVORK5CYII=);
+}
+
+#content {
+  margin-top: 40px;
+}
+
+#footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 12px 0;
+  font-size: .8em;
+  color: #666;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+}

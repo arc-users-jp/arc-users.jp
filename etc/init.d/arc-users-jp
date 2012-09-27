@@ -1,0 +1,35 @@
+#!/sbin/runscript
+
+unset LANG
+export LC_COLLATE=ja_JP.UTF-8
+export LC_CTYPE=ja_JP.UTF-8
+export LC_MESSAGES=C
+export LC_MONETARY=ja_JP.UTF-8
+export LC_NUMERIC=ja_JP.UTF-8
+export LC_TIME=C
+
+export EPONA_ENV=prod
+
+depend() {
+  need net
+  before nginx
+}
+
+start() {
+  ebegin "Starting Arc-users.jp"
+  start-stop-daemon \
+    --start \
+    --background \
+    --user arc-users-jp \
+    --make-pidfile \
+    --pidfile /var/run/arc-users-jp.pid \
+    --exec eponad \
+    -- /var/lib/arc-users-jp
+  eend $? "Failed to start Arc-users.jp"
+}
+
+stop() {
+  ebegin "Stopping Arc-users.jp"
+  start-stop-daemon --stop --pidfile /var/run/arc-users-jp.pid
+  eend $? "Failed to stop Arc-users.jp"
+}

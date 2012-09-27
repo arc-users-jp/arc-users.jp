@@ -1,0 +1,65 @@
+.taginput {
+
+  #font > .shorthand(@baseFontSize,normal,@baseLineHeight); // Set size, weight, line-height here
+  font-family: @baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+
+  display: inline-block;
+  min-height: @baseLineHeight;
+  padding: 2px 6px; // -2px padding-top|bottom for tag label
+  margin-bottom: 9px;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @gray;
+  .border-radius(@inputBorderRadius);
+
+  width: 206px; // plus 12px padding and 2px border
+
+  background-color: @inputBackground;
+  border: 1px solid @inputBorder;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border linear .2s, box-shadow linear .2s");
+
+  // Focus state
+  &.focus {
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
+  }
+
+  ul {
+    margin: 0;
+    .clearfix();
+  }
+
+  li {
+    list-style: none;
+    float: left;
+    cursor: default;
+    margin: 2px 4px 2px 0;
+
+    &.new input {
+      display: block;
+      background: none;
+      border: none;
+      border-radius: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &:not(.new) {
+      .label;
+      background-color: @infoText;
+    }
+
+    &.selected {
+      background-color: @errorText;
+    }
+
+    .delete {
+      cursor: pointer;
+    }
+  }
+
+}
