@@ -6,7 +6,7 @@
 
 (def gh-ribbon (id (o direction 'left) (o color 'red))
   (<a 'href (+ "https://github.com/" id) 'title "Fork me on GitHub"
-    (<img 'style (+ "position:fixed;top:0;" direction ":0;border:0;z-index:9999;")
+    (<img 'style (+ "position:absolute;top:0;" direction ":0;border:0;")
           'src   (+ "https://s3.amazonaws.com/github/ribbons/forkme_"
                     direction "_" color "_" gh-ribbon-colors*.color ".png")
           'alt   "Fork me on GitHub")))

@@ -30,6 +30,7 @@
 (deflayout wikipage sitename*
 
   ((<div 'class "navbar navbar-fixed-top"
+     (gh-ribbon 'arc-users-jp 'right)
      (<div 'class "navbar-inner"
        (<div 'class "container")
          (<a 'class "brand" 'href "/" sitename*)
@@ -44,8 +45,7 @@
             (<a 'href "http://creativecommons.org/licenses/by-sa/3.0/deed.ja"
                 "クリエイティブ・コモンズ 表示-継承ライセンス")
              "の下で利用可能です。")
-     (<span 'class "pull-right" "Powered by Arc"))
-   (gh-ribbon 'arc-users-jp 'right))
+     (<span 'class "pull-right" "Powered by Arc")))
 
   ('css (list "toe.min" "app.min")
    'js  (list "toe.min")
